@@ -1,0 +1,3 @@
+
+%%{"_id":"5e691596711d1635a41c5259","nome":"Gustavo Straub","razaosocial":"Gustavinho","cnpjcpf":"15644290751","tipo":"espiritual","IE":"","email":"gustavostraubcovers@gmail.com","tel":"22225421","cep":"124353234","num":"3180","complemento":"após o campo","bairro":"santa monica","cidade":"petropolis","estado":"rj","obs":"cliente top de linha","endereco":"estrada das arcas","__v":0}
+%%{"_id":"5e6a23227fa86b037c6cce36","nome":"King","razaosocial":"Tigrão","cnpjcpf":"123123","tipo":"foda","email":"bonde_do_tigrão@yahoo.com.br","tel":"7070707070","cep":"123123123","num":"9090","bairro":"odifjas","cidade":"oijfsa","estado":"oaisdj","obs":"quer dançar? quer dançar? vem que o tigrão vai te ensinar","endereco":"rua do tigrão","__v":0}

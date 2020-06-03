@@ -1,7 +1,0 @@
-type Usuario {
-    id: Int
-    nome: String!
-    email: String!
-    token: String
-    perfis: [Perfil]
-}
