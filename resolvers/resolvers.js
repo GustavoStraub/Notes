@@ -19,9 +19,9 @@ const Resolver = {
     }
   },
 
-  // User: {
-  //   notes: (parent, args) => Note.findById({_id: parent.id})
-  // },
+  User: {
+    notes: (parent, args) => Note.find({userId: parent.id})
+  },
   
   Notes: {
     user: (parent, args) => User.findById({_id: parent.userId})

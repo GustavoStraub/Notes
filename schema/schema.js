@@ -13,7 +13,7 @@ const typeDefs = gql`
     id: ID!
     title: String!
     note: String!
-    user: User!
+    user: User
   }
 
   type Query {
