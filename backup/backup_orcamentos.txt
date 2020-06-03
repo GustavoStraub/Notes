@@ -1,4 +1,0 @@
-
-%%{"_id":"5e69167c711d1635a41c525c","produtos":"Site e Criação de marca","num":1,"valor":"1.000","formaPag":"dinheiro","obs":"cliente top","cliente":"5e691596711d1635a41c5259","criadoPor":"Isabela","__v":0}
-%%{"_id":"5e693200711d1635a41c525d","num":1,"valor":"1.000","formaPag":"dinheiro","obs":"cliente top","cliente":"5e691596711d1635a41c5259","criadoPor":"Isabela","__v":0}
-%%{"_id":"5e6a23887fa86b037c6cce38","num":2,"valor":"6000","formaPag":"cartão","obs":"é o tigrão","cliente":"5e6a23227fa86b037c6cce36","criadoPor":"Roberta","__v":0}
