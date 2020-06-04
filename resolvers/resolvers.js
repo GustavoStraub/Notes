@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const Note = require('../models/Note')
+const bcrypt = require('bcrypt-nodejs')
 
 const Resolver = {
   Query: {
@@ -7,11 +8,12 @@ const Resolver = {
     User: async (_, { id }) => await User.findById(id),
     Note: async (_, { id }) => await Note.findById(id),
     Notes: () => Note.find(),
-
   },
 
   Mutation: {
     addUser: async (_, args) => {
+      const salt = bcrypt.genSaltSync()
+      args.password = bcrypt.hashSync(args.senha, salt)
       return await new User(args).save()
     },
     editUser: (_, args) => {
@@ -25,11 +27,10 @@ const Resolver = {
       if (!id || !email) return Error('You need to inform either an ID or an Email in order to delete a user')
     },
     addNote: async (_, args) => {
-      if(args) return await new Note(args).save()
-      if(!args.title) return Error('Please, inform a title for your note')
-      if(!args.note) return Error('Please, inform the note for your note')
-      if(!args.userId) return Error('Please inform the user')
-      
+      if (args) return await new Note(args).save()
+      if (!args.title) return Error('Please, inform a title for your note')
+      if (!args.note) return Error('Please, inform the note for your note')
+      if (!args.userId) return Error('Please inform the user')
     },
     editNote: (_, args) => {
       if (args.id) return Note.findOneAndUpdate({ _id: args.id }, args)
