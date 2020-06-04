@@ -9,7 +9,6 @@ const Resolver = {
     Note: async (_, { id }) => await Note.findById(id),
     Notes: () => Note.find(),
   },
-
   Mutation: {
     addUser: async (_, args) => {
       const salt = bcrypt.genSaltSync()
@@ -36,8 +35,8 @@ const Resolver = {
       if (args.id) return Note.findOneAndUpdate({ _id: args.id }, args)
       return new Error('You need to inform an ID in order to edit a note')
     },
-    deleteNote: (_, { id }) => {
-      if (id) return Note.findByIdAndDelete({ _id: id })
+    deleteNote: async (_, { id }) => {
+      if (id) return await Note.findByIdAndDelete({ _id: id })
       return new Error('You need to inform an ID in order to delete a note')
     }
   },
