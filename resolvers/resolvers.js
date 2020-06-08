@@ -28,7 +28,13 @@ const Resolver = {
     addUser: async (_, args) => {
       const salt = bcrypt.genSaltSync()
       args.password = bcrypt.hashSync(args.password, salt)
-      return await new User(args).save()
+      const Email = await User.findOne({email : args.email})
+      console.log(Email)
+      if(Email == null){
+        return await new User(args).save()
+      } else {
+        return new Error('Email is already assigned')
+      }
     },
     editUser: (_, args) => {
       if (args.email) return User.findOneAndUpdate({ email: args.email }, args)
