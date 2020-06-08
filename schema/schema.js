@@ -7,6 +7,7 @@ const typeDefs = gql`
     name: String!
     email: String!
     notes: [Notes!]
+    token: String
   },
 
   type Notes {
@@ -20,6 +21,7 @@ const typeDefs = gql`
     # Users Queries
     Users: [User!]!
     User(id: ID, email:String): User
+    Login(email: String!, password:String): User
 
     # Notes Queries
     Notes: [Notes!]!
