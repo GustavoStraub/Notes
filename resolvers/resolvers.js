@@ -1,18 +1,20 @@
 const User = require('../models/User')
 const Note = require('../models/Note')
 const bcrypt = require('bcrypt-nodejs')
-const {GetUserLogged} = require('../config/Token')
+const { GetUserLogged } = require('../config/Token')
 
 const Resolver = {
   Query: {
-    Login: async (_, {email, password}) =>{
-      const user = await User.findOne({email: email})
-      if(!user){
+    Login: async (_, { email, password }) => {
+      const user = await User.findOne({ email: email })
+      if (!user) {
         throw new Error('User not found!')
       }
+      const salt = bcrypt.genSaltSync()
+
       const PasswordComparing = bcrypt.compareSync(password, user.password)
-      console.log(PasswordComparing)
-      if(!PasswordComparing) {
+
+      if (!PasswordComparing) {
         throw new Error('Wrong Password!')
       }
       return GetUserLogged(user)
@@ -25,7 +27,7 @@ const Resolver = {
   Mutation: {
     addUser: async (_, args) => {
       const salt = bcrypt.genSaltSync()
-      args.password = bcrypt.hashSync(args.senha, salt)
+      args.password = bcrypt.hashSync(args.password, salt)
       return await new User(args).save()
     },
     editUser: (_, args) => {
