@@ -10,8 +10,6 @@ const Resolver = {
       if (!user) {
         throw new Error('User not found!')
       }
-      const salt = bcrypt.genSaltSync()
-
       const PasswordComparing = bcrypt.compareSync(password, user.password)
 
       if (!PasswordComparing) {
