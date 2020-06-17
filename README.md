@@ -9,6 +9,8 @@
 
 - When everything is set up run ```nodemon index``` to start the project
 
+- You can also use the Front end application, you can find that [Here](https://github.com/GustavoStraub/Notes-Web)
+
 ### Technologies used:
 - Apollo Server, GraphQL, Bcrypt, JWT
 
