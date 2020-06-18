@@ -16,7 +16,7 @@ mongoose.connection.once('open', () => {
 })
 
 const server = new ApolloServer({typeDefs, resolvers})
-server.listen(4001).then(({url}) => {
+server.listen(process.env.PORT || 4001).then(({url}) => {
   console.log(chalk.cyan(`> Apollo Server ready at ${url}`))
 })
 
