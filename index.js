@@ -7,7 +7,7 @@ require('dotenv').config()
 
 
 mongoose.connect(
-  process.env.Connection,
+  process.env.CONNECTION,
   { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 )
 
